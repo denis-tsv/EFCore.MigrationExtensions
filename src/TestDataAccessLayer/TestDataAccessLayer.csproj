@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <IsPackable>false</IsPackable>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <WarningsAsErrors />
+        <NoWarn>1591</NoWarn>
+        <UserSecretsId>167cac3d-577d-4c68-83d8-55cc9162b0f1</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <None Remove="Sql\v_view.sql" />
+      <None Remove="Sql\v_view_2.sql" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Include="Sql\v_view_2.sql" />
+      <EmbeddedResource Include="Sql\v_view.sql" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.10">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.7" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\EFCore.MigrationExtensions.PostgreSQL\EFCore.MigrationExtensions.PostgreSQL.csproj" />
+    </ItemGroup>
+
+</Project>
