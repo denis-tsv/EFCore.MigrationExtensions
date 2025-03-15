@@ -16,8 +16,7 @@ For more information refer to https://github.com/denis-tsv/EFCore.MigrationExten
         </PackageReference>
     </ItemGroup>
 
-
-    <ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\EFCore.MigrationExtensions\EFCore.MigrationExtensions.csproj" />
   </ItemGroup>
 
