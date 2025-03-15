@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore.MigrationExtensions"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCore.MigrationExtensions.SqlServer", "EFCore.MigrationExtensions.SqlServer\EFCore.MigrationExtensions.SqlServer.csproj", "{69BDA2FA-6337-40F2-94F4-12A9380DA4C9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSqlServer", "TestSqlServer\TestSqlServer.csproj", "{089F7FDA-1494-4B65-A189-97F6A2FA9468}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{69BDA2FA-6337-40F2-94F4-12A9380DA4C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69BDA2FA-6337-40F2-94F4-12A9380DA4C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69BDA2FA-6337-40F2-94F4-12A9380DA4C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{089F7FDA-1494-4B65-A189-97F6A2FA9468}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{089F7FDA-1494-4B65-A189-97F6A2FA9468}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{089F7FDA-1494-4B65-A189-97F6A2FA9468}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{089F7FDA-1494-4B65-A189-97F6A2FA9468}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
