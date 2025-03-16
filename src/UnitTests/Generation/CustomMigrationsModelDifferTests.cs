@@ -30,6 +30,7 @@ public class CustomMigrationsModelDifferTests
         _differ = new(
             relationalTypeMappingSource, 
             Mock.Of<IMigrationsAnnotationProvider>(),
+            Mock.Of<IRelationalAnnotationProvider>(),
             Mock.Of<IRowIdentityMapFactory>(),
             new CommandBatchPreparerDependencies(Mock.Of<IModificationCommandBatchFactory>(),
                 Mock.Of<IParameterNameGeneratorFactory>(),

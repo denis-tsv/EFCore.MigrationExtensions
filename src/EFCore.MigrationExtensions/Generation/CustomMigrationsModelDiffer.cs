@@ -22,12 +22,14 @@ public sealed class CustomMigrationsModelDiffer : MigrationsModelDiffer
     /// <summary> Calculates the difference between source and target models </summary>
     public CustomMigrationsModelDiffer(
         IRelationalTypeMappingSource typeMappingSource,
-        IMigrationsAnnotationProvider migrationsAnnotations,
+        IMigrationsAnnotationProvider migrationsAnnotationProvider,
+        IRelationalAnnotationProvider relationalAnnotationProvider,
         IRowIdentityMapFactory rowIdentityMapFactory,
         CommandBatchPreparerDependencies commandBatchPreparerDependencies,
         IEnumerable<IModelDiffer> differs) : base(
         typeMappingSource,
-        migrationsAnnotations,
+        migrationsAnnotationProvider,
+        relationalAnnotationProvider,
         rowIdentityMapFactory,
         commandBatchPreparerDependencies)
     {
