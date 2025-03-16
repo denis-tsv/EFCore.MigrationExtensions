@@ -7,7 +7,7 @@ For more information refer to https://github.com/denis-tsv/EFCore.MigrationExten
   </PropertyGroup>
     
   <ItemGroup>
-    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>
