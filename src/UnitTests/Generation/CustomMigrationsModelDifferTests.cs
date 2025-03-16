@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using EFCore.MigrationExtensions.Generation;
 using EFCore.MigrationExtensions.SqlObjects;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
@@ -27,15 +26,14 @@ public class CustomMigrationsModelDifferTests
         var relationalTypeMappingSource = Mock.Of<IRelationalTypeMappingSource>();
 
         var context = new DbContext(new DbContextOptionsBuilder().UseInMemoryDatabase(nameof(CustomMigrationsModelDifferTests)).Options);
-
+        
         _differ = new(
-            relationalTypeMappingSource, Mock.Of<IMigrationsAnnotationProvider>(),
-            context.GetService<IChangeDetector>(),
-            context.GetService<IUpdateAdapterFactory>(),
+            relationalTypeMappingSource, 
+            Mock.Of<IMigrationsAnnotationProvider>(),
+            Mock.Of<IRowIdentityMapFactory>(),
             new CommandBatchPreparerDependencies(Mock.Of<IModificationCommandBatchFactory>(),
                 Mock.Of<IParameterNameGeneratorFactory>(),
                 Mock.Of<IComparer<IReadOnlyModificationCommand>>(),
-                Mock.Of<IKeyValueIndexFactorySource>(),
                 Mock.Of<IModificationCommandFactory>(),
                 context.GetService<ILoggingOptions>(),
                 context.GetService<IDiagnosticsLogger<DbLoggerCategory.Update>>(),

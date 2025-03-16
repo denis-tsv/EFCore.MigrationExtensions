@@ -1,16 +1,14 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using EFCore.MigrationExtensions.Utils;
 using EFCore.MigrationExtensions.Generation.Contracts;
 using EFCore.MigrationExtensions.SqlObjects;
-using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
+using EFCore.MigrationExtensions.Utils;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Migrations.Internal;
 using Microsoft.EntityFrameworkCore.Migrations.Operations;
 using Microsoft.EntityFrameworkCore.Storage;
-using Microsoft.EntityFrameworkCore.Update;
 using Microsoft.EntityFrameworkCore.Update.Internal;
 
 namespace EFCore.MigrationExtensions.Generation;
@@ -25,14 +23,12 @@ public sealed class CustomMigrationsModelDiffer : MigrationsModelDiffer
     public CustomMigrationsModelDiffer(
         IRelationalTypeMappingSource typeMappingSource,
         IMigrationsAnnotationProvider migrationsAnnotations,
-        IChangeDetector changeDetector,
-        IUpdateAdapterFactory updateAdapterFactory,
+        IRowIdentityMapFactory rowIdentityMapFactory,
         CommandBatchPreparerDependencies commandBatchPreparerDependencies,
         IEnumerable<IModelDiffer> differs) : base(
         typeMappingSource,
         migrationsAnnotations,
-        changeDetector,
-        updateAdapterFactory,
+        rowIdentityMapFactory,
         commandBatchPreparerDependencies)
     {
         _differs = differs.ToList();
