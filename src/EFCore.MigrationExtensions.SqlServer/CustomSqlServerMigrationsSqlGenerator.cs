@@ -6,6 +6,7 @@ using EFCore.MigrationExtensions.Generation.Contracts;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Migrations.Operations;
+using Microsoft.EntityFrameworkCore.Update;
 
 namespace EFCore.MigrationExtensions.SqlServer;
 
@@ -16,9 +17,9 @@ public sealed class CustomSqlServerMigrationsSqlGenerator : SqlServerMigrationsS
 
 #pragma warning disable EF1001 // Internal EF Core API usage.
     /// <summary> Sql generator </summary>
-    public CustomSqlServerMigrationsSqlGenerator(MigrationsSqlGeneratorDependencies dependencies, IRelationalAnnotationProvider migrationsAnnotations,
+    public CustomSqlServerMigrationsSqlGenerator(MigrationsSqlGeneratorDependencies dependencies, ICommandBatchPreparer commandBatchPreparer,
         IEnumerable<ICustomSqlGenerator> sqlGenerators) : base(
-        dependencies, migrationsAnnotations)
+        dependencies, commandBatchPreparer)
 #pragma warning restore EF1001 // Internal EF Core API usage.
     {
         _generators = sqlGenerators.ToDictionary(g => g.OperationType);
