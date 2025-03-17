@@ -18,7 +18,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\EFCore.MigrationExtensions.PostgreSQL\EFCore.MigrationExtensions.PostgreSQL.csproj" />
       <ProjectReference Include="..\TestDataAccessLayer\TestDataAccessLayer.csproj" />
     </ItemGroup>
     
