@@ -34,7 +34,7 @@ internal static class AssemblyExtensions
         return assembly
             .GetManifestResourceNames()
             .Where(r => r.StartsWith(folderName) && r.EndsWith(".sql"))
-            .Select(r => new ResourceInfo(r, r.Substring(folderName.Length + 1)))
+            .Select(r => new ResourceInfo(r, r.Substring(r.Replace(".sql", "").LastIndexOf('.') + 1)))
             .ToArray();
     }
 
