@@ -11,11 +11,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <None Remove="Sql\v_view.sql" />
-      <None Remove="Sql\v_view_2.sql" />
-    </ItemGroup>
-
-    <ItemGroup>
       <EmbeddedResource Include="Sql\v_view_2.sql" />
       <EmbeddedResource Include="Sql\v_view.sql" />
     </ItemGroup>
