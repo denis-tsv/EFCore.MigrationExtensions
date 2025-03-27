@@ -41,9 +41,9 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 ```
 
 # Known limitations
-- Doesn't drop deleted objects (generates non compilable code, so the developer should write drop-code himself).
-- Only C# is supported
+- Doesn't drop deleted objects (generates non compilable code, so the developer should write drop-code himself)
 - PostgreSQL and SqlServer are supported, but any other DB can be easily added (use [`EFCore.MigrationExtensions.PostgreSQL`](src/EFCore.MigrationExtensions.PostgreSQL) as an example)
+- Needs the same line endings settings for all developers by .gitattributes file or 'git config --global core.autocrlf' command
 
 # Testing
 1. Open TestDataAccessLayer folder in terminal
