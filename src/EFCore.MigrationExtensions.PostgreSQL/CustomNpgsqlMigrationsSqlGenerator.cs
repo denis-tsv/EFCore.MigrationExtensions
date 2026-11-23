@@ -6,6 +6,7 @@ using EFCore.MigrationExtensions.Generation.Contracts;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Migrations.Operations;
+using Microsoft.EntityFrameworkCore.Query;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Infrastructure.Internal;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Migrations;
 
@@ -19,8 +20,9 @@ public sealed class CustomNpgsqlMigrationsSqlGenerator : NpgsqlMigrationsSqlGene
 #pragma warning disable EF1001 // Internal EF Core API usage.
     /// <summary> Sql generator </summary>
     public CustomNpgsqlMigrationsSqlGenerator(MigrationsSqlGeneratorDependencies dependencies, INpgsqlSingletonOptions npgsqlOptions,
+        IQuerySqlGeneratorFactory querySqlGeneratorFactory,
         IEnumerable<ICustomSqlGenerator> sqlGenerators) : base(
-        dependencies, npgsqlOptions)
+        dependencies, npgsqlOptions, querySqlGeneratorFactory)
 #pragma warning restore EF1001 // Internal EF Core API usage.
     {
         _generators = sqlGenerators.ToDictionary(g => g.OperationType);
